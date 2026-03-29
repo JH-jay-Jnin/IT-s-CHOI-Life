@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h2>{{ user1.name }}</h2>
+      <h2>{{ user1.age }}</h2>
+      <hr />
+      <h2>{{ user2.name }}</h2>
+      <h2>{{ user2.age }}</h2>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script>
+      class User {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        // 이렇게 Class를 만들고 난 뒤, (틀을 만들고 난 뒤)
+
+        sayHello() {
+          return '안녕하세요 ' + this.name;
+        }
+      }
+
+      Vue.createApp({
+        //Vue는 Class의 틀 역할이고, createApp은 객체를 만든 것이다.
+        data() {
+          return {
+            user1: new User('홍길동', 20),
+            user2: new User('김길동', 21),
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
