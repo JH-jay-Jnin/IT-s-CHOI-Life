@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Traditional Event - Default Event</title>
+    <script>
+      // 이벤트를 연결합니다.
+      window.onload = function () {
+        // 문서 객체를 선택합니다.
+        let button = document.getElementById('button');
+        // 이벤트를 연결합니다.
+        button.onclick = function () {
+          // 기본 이벤트를 제거합니다.
+          return false;
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <a id="button" href="http://hanbit.co.kr">버튼</a>
+    <a id="button1" href="http://hanbit.co.kr">버튼</a>
+    <script>
+      // 표준이벤트 모델
+      document
+        .getElementById('button1')
+        .addEventListener('click', function (e) {
+          // return false;
+          // console.log(event); // 이벤트와 관련된 정보
+          // console.log(event.target); // 이벤트가 발생한 요인
+
+          e.preventDefault();
+          // a 태그의 기본 이벤트 제거 ==> 표준 이벤트 모델에서는 return false, true가 안되기 때문에
+          // 무조건 이렇게 해야한다. function(e)로 해도 되고 function(event)로 써도 무방하다.
+        });
+    </script>
+  </body>
+</html>

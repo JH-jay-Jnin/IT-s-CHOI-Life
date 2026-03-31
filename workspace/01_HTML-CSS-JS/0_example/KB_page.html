@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KB Page</title>
+    <link rel="stylesheet" href="KB_page.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <section>
+          <!-- 클릭 시 메인페이지로 이동하는 로고
+                href="#은 임시 (나중에 www. ~ 를 넣으면 된다)" -->
+          <a href="#">
+            <img src="KB.png" alt="logo" id="main_logo" />
+          </a>
+        </section>
+
+        <section>
+          <!-- 검색창 -->
+          <section class="search-area">
+            <form action="#" name="search-form">
+              <!-- Form 태그 내부의 input 태그 값이 
+                    서버 또는 페이지로 전달 된다. 
+                    단, input의 "name" 속성이 
+                    존재해야만 전달된다.-->
+              <fieldset>
+                <!-- fieldset : form 태그
+                    내부에서 input을 종류별로
+                    묶는 용도로 사용한다 -->
+                <input
+                  type="text"
+                  name="query"
+                  placeholder="검색어를 입력해주세요."
+                  autocomplete="off"
+                  id="query"
+                />
+                <!-- autocomplete : 자동완성 값을 꺼준다 -->
+                <button id="search_btn">검색</button>
+              </fieldset>
+            </form>
+          </section>
+        </section>
+        <section>(인기검색어)</section>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#">K-디지털</a></li>
+          <li><a href="#">프로그래밍</a></li>
+          <li><a href="#">데이터분석</a></li>
+          <li><a href="#">정보보안</a></li>
+          <li><a href="#">클라우드</a></li>
+        </ul>
+      </nav>
+
+      <section class="content">
+        <section>
+          <h1>주요 컨텐츠 작성 부분</h1>
+        </section>
+        <section>
+          <h1>사이드 메뉴</h1>
+        </section>
+      </section>
+
+      <footer>
+        <p>Copyright &copy; KB It's your life 606 class</p>
+        <article>
+          <a href="#">프로젝트 소개</a>
+          <span>|</span>
+          <a href="#">이용약관</a>
+          <span>|</span>
+          <a href="#">개인정보처리방침</a>
+          <span>|</span>
+          <a href="#">고객센터</a>
+        </article>
+      </footer>
+    </main>
+  </body>
+</html>
+
+<!-- 
+
+    1. 페이지의 큰 틀을 먼저 쪼갠 다음에
+        화면 구성을 설정한다.
+
+    2. 메인페이지의 로고를 만들어서 시작한다 
+        상단에 로고 옆에 같이있던 검색어창을 만든다.
+
+    3. 검색어창과 같이 있던 메뉴 파일을 만든다 
+       ( UL, LI a태그를 이용해서 )
+
+    4. 2개로 나뉘어 지는 주요 컨텐츠 부분과 사이드 메뉴로
+       구성시킨다.
+
+    5. 하단 copyright 칸을 만든다.
+        이때, &copy; 를 쓰면 copyright 옆에 동그라미 c가 생긴다
+    -->

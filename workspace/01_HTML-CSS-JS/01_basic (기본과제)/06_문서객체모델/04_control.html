@@ -1,0 +1,67 @@
+<!-- 단순 텍스트 출력
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        let zs = document.querySelectorAll('h1');
+
+        for (let i = 0; i < zs.length; i++) {
+          let z = zs[i];
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>header-0</h1>
+    <h1>header-1</h1>
+    <h1>header-2</h1>
+    <h1>header-3</h1>
+    <h1>header-4</h1>
+    <h1>header-5</h1>
+    <h1>header-6</h1>
+    <h1>header-7</h1>
+    <h1>header-8</h1>
+    <h1>header-9</h1>
+  </body>
+</html> -->
+
+<!-- (1) 단순텍스트 출력
+     (2) HTML 태그가 적용되도록 -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 이벤트를 연결
+      window.onload = function () {
+        // 변수를 선언
+        let output = '';
+        for (let i = 0; i < 10; i++) {
+          output += `<h1>Header - ` + i + ` <h1>`;
+        }
+        // 문서 객체 내부의 글자를 변경
+        document.body.textContent = output;
+        // innerHTML 속성을 사용
+        // document.body.innerHTML = output; ----> 위에꺼 실행 후 주석 풀고 실행하기
+      };
+    </script>
+  </head>
+  <body>
+    <!-- <h1>header-0</h1>
+    <h1>header-1</h1>
+    <h1>header-2</h1>
+    <h1>header-3</h1>
+    <h1>header-4</h1>
+    <h1>header-5</h1>
+    <h1>header-6</h1>
+    <h1>header-7</h1>
+    <h1>header-8</h1>
+    <h1>header-9</h1> -->
+  </body>
+</html>

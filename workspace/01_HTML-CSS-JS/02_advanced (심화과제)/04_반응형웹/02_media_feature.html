@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- 주요 미디어 타입
+          (1) screen : 컴퓨터 화면, 태블릿, 스마트폰 등 
+          (2) print  : 인쇄 장치
+          (3) all    : 모든 미디어 유형 -->
+
+    <style>
+      /* 스마트폰 */
+      /* 화면 너비가 767px 이하일 때 */
+      @media screen and (max-width: 767px) {
+        body {
+          background-color: red;
+        }
+      }
+
+      /* 태블릿 PC */
+      /* 화면 너비가 768px 이상에서 959px 이하일 때 */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: green;
+        }
+      }
+
+      /* 데스트콥 */
+      /* 화면 너비가 960px 이상일 때 */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: blue;
+        }
+      }
+      /* Live Server 브라우저의 크기를 조절해서 결과 확인해보기! */
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. …</p>
+  </body>
+</html>

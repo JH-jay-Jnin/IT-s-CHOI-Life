@@ -1,0 +1,772 @@
+@charset "UTF-8";
+
+/* -------------------- 공통 초기화 -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
+  background: #f7f7f7;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* -------------------- 공통 폭 (가운데정렬, 가로 폭) -------------------- */
+.header-top,
+.kb-main-menu,
+.page-layout,
+.site-footer .footer-inner {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* -------------------- 헤더 -------------------- */
+.kb-header {
+  background: #eefbe1;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header-top {
+  height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#main_logo {
+  width: 151px;
+  height: auto;
+}
+
+.top-right-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.second-top-left {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+}
+
+.second-top-left .personal-link {
+  font-weight: 500;
+}
+
+.sencond-top-left .button,
+.second-top-left .small-btn {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #bdbdbd;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* 상단 메뉴 전체 줄 */
+.kb-main-menu {
+  width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* 각 메뉴 칸 */
+.kb-main-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3a2d14;
+  border: 1px solid #d8d8d8;
+  border-right: none;
+  background: #fff;
+  white-space: nowrap;
+}
+
+/* 마지막 칸 오른쪽 테두리 복구 */
+.kb-main-menu a:last-child {
+  border-right: 1px solid #d8d8d8;
+}
+
+/* 노란색 메뉴 */
+.kb-main-menu .fin {
+  background: #ffce0b;
+}
+
+/* 일반 메뉴 */
+.kb-main-menu .normal {
+  background: #f7f7f7;
+}
+
+/* --------------------  미   들  ------------------------- */
+.kb-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100 100 100 100;
+  padding: 0 auto;
+}
+
+.news {
+  display: flex;
+}
+
+.event {
+  display: flex;
+}
+
+/* -------------------- 본문 레이아웃? -------------------- */
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 150px;
+  margin: 50px auto;
+  width: 50px;
+  height: 100px;
+}
+
+/* -------------------- 좌측 메뉴 -------------------- */
+.left-nav {
+  width: 180px;
+}
+
+.left-nav h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #cfcfcf;
+}
+
+.left-nav .nav-group-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.left-nav .menu-box {
+  border: 1px solid #dddddd;
+  background: #fff;
+  margin-bottom: 18px;
+}
+
+.left-nav .menu-box > li {
+  border-bottom: 1px solid #ededed;
+}
+
+.left-nav .menu-box > li:last-child {
+  border-bottom: none;
+}
+
+.left-nav .menu-box a {
+  display: block;
+  padding: 14px 14px;
+  font-size: 15px;
+  color: #555;
+}
+
+.left-nav .menu-box a.active {
+  background: #ffcc00;
+  color: #222;
+  font-weight: 700;
+}
+
+.left-nav .simple-links li a {
+  display: block;
+  padding: 9px 0;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.35;
+}
+
+/* -------------------- 메인 콘텐츠 -------------------- */
+.main-content {
+  width: 628px;
+}
+
+/* breadcrumb */
+.breadcrumb {
+  text-align: right;
+  font-size: 12px;
+  color: #8a8a8a;
+  margin-bottom: 8px;
+}
+
+/* 제목 */
+.page-title-area h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 14px;
+}
+
+/* -------------------- 환율정보 박스 -------------------- */
+.exchange-info {
+  border: 1px solid #dddddd;
+  background: #fff;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.exchange-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.exchange-boxes {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.exchange-card {
+  flex: 1;
+  border: 1px solid #dcdcdc;
+  background: #fcfcfc;
+  padding: 14px 12px;
+}
+
+.exchange-card strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.exchange-card p {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
+}
+
+.exchange-date {
+  font-size: 12px;
+  color: #7a7a7a;
+}
+
+/* -------------------- 탭 -------------------- */
+.tab-menu {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.tab {
+  flex: 1;
+  height: 36px;
+  border: 1px solid #d8d8d8;
+  border-right: none;
+  background: #fff;
+  color: #333;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab:last-child {
+  border-right: 1px solid #d8d8d8;
+}
+
+.tab.active {
+  background: #fff;
+  border-top: 2px solid #8e7861;
+  color: #222;
+}
+
+/* -------------------- 안내 박스 -------------------- */
+.guide-box {
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  padding: 12px 16px 14px;
+  margin-bottom: 30px;
+}
+
+.guide-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 10px;
+}
+
+.guide-box ul {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.guide-box li {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* -------------------- 조회 조건 박스 -------------------- */
+.search-box {
+  border-top: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+  background: #fff;
+  margin-bottom: 18px;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  min-height: 74px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.search-row:last-child {
+  border-bottom: none;
+}
+
+.search-label {
+  width: 120px;
+  min-width: 120px;
+  padding-left: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+}
+
+.search-content {
+  flex: 1;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.date-input,
+.round-input,
+.round-select {
+  height: 32px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  padding: 0 10px;
+  color: #333;
+}
+
+.date-input {
+  width: 120px;
+}
+
+.round-input {
+  width: 120px;
+}
+
+.round-select {
+  width: 150px;
+}
+
+.small-btn {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #c8c8c8;
+  background: #fff;
+  color: #444;
+  cursor: pointer;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #444;
+}
+
+.search-notice {
+  width: 100%;
+  font-size: 12px;
+  color: #9a9a9a;
+  margin-top: 6px;
+}
+
+.search-action {
+  text-align: center;
+  padding: 16px 0 18px;
+  background: #fff;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 18px;
+}
+
+.search-btn {
+  min-width: 92px;
+  height: 30px;
+  border: none;
+  background: #8e7861;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* -------------------- 조회 시간 테이블 -------------------- */
+.meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+  background: #fff;
+}
+
+.meta-table th,
+.meta-table td {
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 13px;
+}
+
+.meta-table th {
+  background: #f8f8f8;
+  font-weight: 700;
+}
+
+.meta-table td {
+  color: #555;
+}
+
+/* -------------------- 환율 메인 테이블 -------------------- */
+.exchange-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.exchange-table th,
+.exchange-table td {
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 13px;
+}
+
+.exchange-table thead th {
+  background: #f8f8f8;
+  font-weight: 700;
+}
+
+.exchange-table tbody td {
+  color: #444;
+}
+
+.exchange-table tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+/* -------------------- 푸터 -------------------- */
+.site-footer {
+  margin-top: 50px;
+  background: #fff;
+  border-top: 1px solid #dddddd;
+}
+
+.site-footer .footer-inner {
+  padding: 24px 0 32px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* -------------------- 반응형 간단 처리 -------------------- */
+@media (max-width: 1280px) {
+  .header-top,
+  .kb-main-menu,
+  .page-layout,
+  .site-footer .footer-inner {
+    width: 95%;
+  }
+
+  .page-layout {
+    gap: 24px;
+  }
+
+  .main-content {
+    width: auto;
+    flex: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-layout {
+    flex-direction: column;
+  }
+
+  .left-nav,
+  .main-content,
+  .right-nav {
+    width: 100%;
+  }
+
+  .exchange-boxes {
+    flex-direction: column;
+  }
+
+  .search-row {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
+
+  .search-label {
+    width: 100%;
+    padding: 14px 18px 0;
+  }
+
+  .search-content {
+    padding: 10px 18px 14px;
+  }
+}
+
+.exchange-info {
+  border: 1px solid #dddddd;
+  background: #fff;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.exchange-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.exchange-boxes {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.exchange-card {
+  flex: 1;
+  border: 1px solid #dcdcdc;
+  background: #fcfcfc;
+  padding: 14px 12px;
+}
+
+.exchange-card strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.exchange-card p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.exchange-date {
+  font-size: 12px;
+  color: #777;
+}
+
+.guide-box {
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  padding: 12px 16px 14px;
+  margin-bottom: 26px;
+}
+
+.guide-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ececec;
+  margin-bottom: 10px;
+}
+
+.guide-box ul {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.guide-box li {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.search-box {
+  border-top: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+  background: #fff;
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  min-height: 74px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.search-row:last-child {
+  border-bottom: none;
+}
+
+.search-label {
+  width: 120px;
+  min-width: 120px;
+  padding-left: 18px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.search-content {
+  flex: 1;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.date-input,
+.round-select {
+  height: 32px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  padding: 0 10px;
+}
+
+.date-input {
+  width: 120px;
+}
+
+.round-select {
+  width: 150px;
+}
+
+.small-btn {
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #c8c8c8;
+  background: #fff;
+  cursor: pointer;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.search-notice {
+  width: 100%;
+  font-size: 12px;
+  color: #9a9a9a;
+  margin-top: 6px;
+}
+
+.search-action {
+  text-align: center;
+  padding: 16px 0 18px;
+  background: #fff;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 18px;
+}
+
+.search-btn {
+  min-width: 92px;
+  height: 30px;
+  border: none;
+  background: #8e7861;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+  background: #fff;
+}
+
+.meta-table th,
+.meta-table td {
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 13px;
+}
+
+.meta-table th {
+  background: #f8f8f8;
+  font-weight: 700;
+}
+
+.exchange-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.exchange-table th,
+.exchange-table td {
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 13px;
+}
+
+.exchange-table thead th {
+  background: #f8f8f8;
+  font-weight: 700;
+}
+
+.exchange-table tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}

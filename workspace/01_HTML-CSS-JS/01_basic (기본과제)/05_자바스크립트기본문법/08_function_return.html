@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수</title>
+  </head>
+  <body>
+    <h3>함수 function</h3>
+    <pre>
+        function 함수명([매개변수] ){  <!-- 이 한 줄이 함수를 선언하는 것임 [매개변수]는 있어도 되고 없어도 된다.-->
+            <!-- 이 공간에서는 함수를 정의한다. -->
+            return 반환값 ;
+         }
+
+         <!-- {} 밖에서 함수명(); 를 쓴다면 저장된 함수를 호출하는 것이다. -->
+    </pre>
+    <script>
+      // 함수 선언
+      function f(x) {
+        return x + x; // return을 하면 함수를 호출한 곳으로 값을 반환한다.
+        /*생략 가능의 의미 */
+      }
+
+      // 함수 호출
+      f();
+      alert(f(3)); // 이 문장은 alter(6) 와 같은 의미이 이다.
+    </script>
+  </body>
+</html>

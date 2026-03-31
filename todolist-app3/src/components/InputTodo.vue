@@ -30,6 +30,9 @@ const addTodoHandler = () => {
   if (todo.value.length >= 3) {
     emit('add-todo', todo.value);
     todo.value = '';
-  } // if
+  } else {
+    alert('할 일은 3글자 이상 입력해주세요.');
+  }
+  // if
 }; //addTodoHandler
 </script>

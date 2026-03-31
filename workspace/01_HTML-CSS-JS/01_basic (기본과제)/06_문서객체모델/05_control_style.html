@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DOM Basic</title>
+    <script>
+      // 이벤트를 연결합니다.
+      window.onload = function () {
+        // 문서 객체를 추가합니다.
+        let output = '';
+        for (let i = 0; i < 256; i++) {
+          output += '<div></div>'; // <div> 256개가 생김.
+        }
+        document.body.innerHTML = output; // <div>에 대입
+
+        // 문서 객체를 선택합니다.
+        let divs = document.querySelectorAll('div');
+        for (let i = 0; i < divs.length; i++) {
+          // 변수를 선언합니다.
+          let div = divs[i]; // 배열로 담기기 때문에, 하나씩 꺼내서 인덱스번호를 매김. ==> querySelectorAll과 연관
+
+          // 스타일을 적용합니다.
+          div.style.height = '2px';
+          div.style.background = 'rgb(' + i + ',' + i + ',' + i + ')';
+          div.style.background = 'rgb(`${i}, ${i}, ${i}`)'; //( 백틱으로 바꿔서 쓰기 ) ==>탬플릿 리터럴
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

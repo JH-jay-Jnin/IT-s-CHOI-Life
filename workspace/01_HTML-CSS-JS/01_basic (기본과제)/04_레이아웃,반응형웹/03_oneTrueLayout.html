@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 500px;
+        margin: 10px auto;
+      }
+      #top {
+        background-color: green;
+      }
+      #middle {
+        overflow: hidden;
+      }
+      #left {
+        float: left;
+        background-color: red;
+        /* max-width: 350px; ==> 얘도 결과상은 똑같은데 차이가 뭘까?*/
+        width: 350px;
+      }
+      #right {
+        float: right;
+        background-color: blue;
+        /* max-width: 150px; ==> 얘도 결과상은 똑같은데 차이가 뭘까?*/
+        width: 150px;
+      }
+      #bottom {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">Lorem ipsum dolor sit amet, ...</div>
+    <div id="middle">
+      <div id="left">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+      <div id="right">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...
+      </div>
+    </div>
+    <div id="bottom">Lorem ipsum dolor sit amet, ...</div>
+  </body>
+</html>

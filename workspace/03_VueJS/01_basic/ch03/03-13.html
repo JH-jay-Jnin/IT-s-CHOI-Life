@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <table></table>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            contacts: [`"번호", "이름", "전화번호"`][
+              `"1011", "이새롬", "010-1997-0107"`
+            ][`"1012", "장규리", "010-1997-1227"`][
+              `"1013", "이채영", "010-2000-0514"`
+            ][`"1014", "백지헌", "010-2003-0417"`],
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

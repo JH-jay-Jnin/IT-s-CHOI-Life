@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반복문 - Sum</title>
+  </head>
+  <body>
+    <script>
+      // Block 레벨 스코프란, for 문 안 "{ }" 안에서만 쓸 수 있는 변수로, for {  } 밖에서는 적용이 안됨
+      // 합계 저장용 변수
+      let All_Sum = 0; // 전역 변수
+
+      // 0부터 100까지 반복하는 반복문
+      for (let i = 0; i <= 100; i++) {
+        //누적
+        //    All_Sum = All_Sum + i; // 대입 해야지 계속 누적되서 쌓임
+        All_Sum += i; // All_Sum = All_Sum + i을 간단하게 나타낸 것.
+      }
+      // alert(i);
+      // ReferenceError : i is not defined
+      // --> i는 for문 안에서만 사용 가능하다.
+
+      alert(All_Sum);
+      // for문이나 while문 밖에서 해야, 딱 101번 반복하지 않음
+    </script>
+  </body>
+</html>

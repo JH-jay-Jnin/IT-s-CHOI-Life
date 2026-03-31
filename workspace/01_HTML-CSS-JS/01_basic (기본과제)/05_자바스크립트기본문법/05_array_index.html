@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Basic</title>
+  </head>
+  <body>
+    <h3>배열</h3>
+    <pre>
+        - 변수들의 묶음을 의미
+        - 작성법 : [값, 값, 값, 값, ...]
+        - 배열의 값은 index번호로 구분한다.
+          (index 번호는 0번부터 시작!)
+    </pre>
+    <!-- 10, 20 ,30 ,40, 50을 배열로 정의 -->
+    <script>
+      let array = [10, 20, 30, 40, 50];
+      console.log(array);
+      console.log(array[1]); // 20
+
+      //배열의 길이
+      console.log(array.length); // 10~50 까지 5개이므로 length는 5이다. 즉 마지막 index번호는 '배열의 길이 - 1 ' 이다.
+
+      // for 반복문을 이용하여 출력하기
+      for (let index = 0; index < array.length; index += +2) {
+        // index += 2 를 하게 되면, index = index + 2와 같다.
+        // 증감연산자라는 'index++'를 쓰게 되면, index + 1 과 같다.
+        // 0 에서 (index에서) +1 한 값을 다시 index에 대입한다.
+        // 그러나, 반복문에서는 const라는 상수를 쓸 이유가 없다. 계속 변해야하기 때문에, let을 쓴다
+        alert(array[index]);
+      }
+    </script>
+    <h3>반복문 - for문</h3>
+    <pre>
+        작성법
+        for( 초기식; 조건식; 증감식 ){
+           반복 수행할 코드
+        }
+   
+    *** 중요 ***
+        - 초기식 : 반복문이 수행될 때 "처음에 딱 한 번만 실행하는 구문"
+                  (반복문 안에서 사용될 변수를 선언 및 초기화 하는 작업)
+
+        - 조건식 : "반복문이 수행될 조건"을 작성하는 구문
+                   조건식이 true일 경우 해당 반복을 실행
+                   조건식이 false가 되는 순간 반복문을 탈출
+        
+        - 증감식 : 반복문을 제어하는 변수 값을 증감시키는 구문
+      <!-- 순서: 초기식 - 조건식 - 반복 수행 코드 - 증감식 - 조건식 - 반복 수행 코드 -...- 이후 탈출 -->
+    </pre>
+  </body>
+</html>
