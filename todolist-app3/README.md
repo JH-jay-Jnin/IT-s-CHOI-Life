@@ -1,8 +1,6 @@
 # todolist-app3
 
-실습문제 - todolist 기능 추가
-1. 할일 목록 전체 삭제하기
-2. 할일이 2개 이상인 경우에만 할일 목록 전체 삭제 버튼 보이기
+This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
