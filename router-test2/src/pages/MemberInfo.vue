@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import members from '@/members.json';
+import members from './Members.json';
 
 export default {
   name: 'MemberInfo',
