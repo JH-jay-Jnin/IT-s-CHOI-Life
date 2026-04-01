@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark mt-2">
     <span class="navbar-brand">이날치(LeeNalChi)</span>
-    <button class="navbar -toggler" type="button" @click="changeIsNavShow">
-      <span class="navbar -toggler -icon"></span>
+    <button class="navbar-toggler" type="button" @click="changeIsNavShow">
+      <span class="navbar-toggler -icon"></span>
     </button>
     <div :class="navClass">
       <ul class="navbar-nav">
@@ -44,11 +44,21 @@ export default {
     //computed()는 무조건 반환값이 있어야함.
     //삼선무늬의 상태값이 true/false인지에 따라서 설정할 css를 선택해주자.
     //(삼항연산자) 조건?true일때 실행되는 코드:false일 때 실행되는 코드
+    // ( ) => { } : { }는 실행하는 코드가 1줄일 때는 안쓴다.
+    // return이 있는 경우는 {}일 때는 반드시 명시해야하고, {} 생략한 경우 return 생략 가능
     const navClass = computed(() => {
-      state.isNavShow
+      return state.isNavShow
         ? 'collapse navbar-collapse show'
         : 'collapse navbar-collapse';
     });
+
+    // 또는 return을 안 쓰고 싶다면,
+
+    //    const navClass = computed(() =>
+    //      state.isNavShow
+    //     ? 'collapse navbar-collapse show'
+    //     : 'collapse navbar-collapse';
+    //     );
 
     //3.
     //삼선무늬를 눌렀을 때 상태값을 변경해주는 메서드를 하나 만들자.
@@ -58,6 +68,7 @@ export default {
       // ! --> not의 의미 (반대)
     };
     return {
+      state,
       navClass,
       changeIsNavShow,
     };

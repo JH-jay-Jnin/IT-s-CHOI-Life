@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/pages/Home.vue';
+import Home from '@/pages/Home.vue';
 import About from '@/pages/About.vue';
 import Members from '@/pages/Members.vue';
 import Videos from '@/pages/Videos.vue';
+import MemberInfo from '@/pages/MemberInfo.vue';
 // 컴포넌트가 있는 것만 import 가능, 없는 것을 지정하면 실행 에러!!!
 
 const router = createRouter({
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/members',
       name: 'members',
       component: Members,
+    },
+    {
+      path: '/members/:id', //
+      name: 'members/id',
+      component: MemberInfo, // 여기 먼저 쓰고 import 쓰러가면 이미 알아서 다 만들어져 있음 == Members.vue가 만들어져있고 확장팩이 있기 때문
     },
     {
       path: '/videos',
