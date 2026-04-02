@@ -3,33 +3,41 @@
     <h2>Member Info</h2>
     <div>
       경로 패턴 : /members/:id<br />
-      요청 경로 : {{}}<br />
-      id값 : {{}} <br />
+      요청 경로 : {{ currrentRoute.fullPath }}<br />
+      id값 : {{ currrentRoute.params.id }} <br />
     </div>
+    // key:value 형식으로 들어가있음
   </div>
 
   <div className="mt-5">
-    <img src="https://placehold.co/120x120" class="img" />
-    <h4 class="mt-2">지민(메인보컬)</h4>
-    <p>보컬, 댄스, 가수</p>
+    <img :src="member.photo" class="img" />
+    <!-- : 안쓰고 src를 쓰면 문자열로 인식한다.-->
+    <h4 class="mt-2">{{ member.name }} {{ member.role }}</h4>
+    <p>{{ member.desc }}</p>
     <a class="fa fa-instagram m-1"></a>
     <a class="fa fa-facebook m-1"></a>
     <a class="fa fa-youtube m-1"></a>
     <br /><br />
-    <div>멤버 목록으로</div>
+    <router-link to="/members">멤버 목록으로</router-link>
+    <!-- <router-link :to="{name : 'members'}">멤버 목록으로</router-link>-->
   </div>
 </template>
 
-<script>
-import { useRoute } from 'vue-router';
+<script setup>
+// <script setup> => 코드를 좀 더 간결하게 쓸려고 하는 것이다. import 구문만 남기고 싹다 제거.
+import { createRouter, useRoute } from 'vue-router';
+import Members from './Members.vue';
 
-export default {
-  name: 'MemberInfo',
-  setup() {
-    // 동적 파라미터 id를 얻어 해당 멤버의 정보 찾기
-    return {};
-  },
-};
+const currrentRoute = useRoute();
+
+const id = parseInt(currrentRoute.params.id, 10); // 10진법 숫자로 파싱한다.
+console.log(id);
+
+// 멤버 정보 조회
+// 배열.find ( (요소) => 조건 ) : 조건이 true라면 해당 요소 반환 및 종료
+//                                없다면 undefined 반환
+const member = Members.find((member) => member.id === id);
+console.log(member);
 </script>
 
 <style scoped></style>

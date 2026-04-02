@@ -2,7 +2,7 @@
   <div class="container">
     <Header />
     <!-- RouterView 태그 : 라우터 화면 컴포넌트가 들어갈 자리 -->
-    <router-view></router-view>
+    <Router-view></Router-view>
     <!-- 그냥 <RouterView />로 작성해도 된다.-->
   </div>
 </template>

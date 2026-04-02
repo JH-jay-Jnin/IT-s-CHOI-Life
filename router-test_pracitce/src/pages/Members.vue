@@ -23,7 +23,9 @@
           <!-- <router-link :to="`/members/` + member.id"> -->\
           <!-- params :{ id: member.id } 
                 -> index.js에 작성된 path의 변수명(:id)과 params의 키 값(id)이 일치해야 함 -->
-          <router-link :to="{ name: 'members/id', params: { id: member.id } }">
+          <!----><router-link
+            :to="{ name: 'members/id', params: { id: member.id } }"
+          >
             <!-- :을 안 쓰면, to="/members/1" -> 항상 1번 멤버의 정보로 이동 //
             그런데 우리 멤버별로 바뀌어야함./ :to="`/members/${member.id}`"->
             멤버마다 id가 바뀐다!-->
