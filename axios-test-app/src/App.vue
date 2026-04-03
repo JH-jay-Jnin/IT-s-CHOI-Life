@@ -12,6 +12,8 @@ import axios from 'axios'; // node_modles에 설치된 'axios'
 // axios 할 수 있는 함수를 만들어보자.
 // 화살표 함수를 권장
 const requestAPI = () => {
+  // REST API - URL로 자원을 표현하고 HTTP Method(GET, POST, PUT, DELETE)를 사용해서
+
   // const url = 'http://localhost:3000/todos/2';
   const url = 'api/todos/2';
   // let result = axios.get(URL); // 오래걸린 경우 비동기함수(동시에 실행하는 함수)
