@@ -1,12 +1,6 @@
 {
   "todos": [
     {
-      "id": "1",
-      "todo": "야구장",
-      "desc": "프로야구 경기도 봐야합니다.",
-      "done": false
-    },
-    {
       "id": "2",
       "todo": "놀기",
       "desc": "노는 것도 중요합니다.",
@@ -23,6 +17,15 @@
       "todo": "ES6 공부",
       "desc": "ES6공부를 해야 합니다",
       "done": false
+    },
+    {
+      "id": "awRid5f"
+    },
+    {
+      "todo": "놀기2",
+      "desc": "노는 것도 중요합니다2.",
+      "done": false,
+      "id": "JvSz0rb"
     }
   ]
 }
