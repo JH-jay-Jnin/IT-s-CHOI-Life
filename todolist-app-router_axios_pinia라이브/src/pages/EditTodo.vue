@@ -49,14 +49,14 @@
 </template>
 
 <script setup>
-import { inject, reactive } from 'vue';
+import { reactive } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { useTodoListStore } from '@/stores/todoList';
 
 const router = useRouter();
 const currentRoute = useRoute();
 
-const todoList = inject('todoList');
-const { updateTodo } = inject('actions');
+const { todoList, updateTodo } = useTodoListStore();
 
 console.log(todoList);
 

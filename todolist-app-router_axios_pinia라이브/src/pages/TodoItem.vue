@@ -1,11 +1,9 @@
 <template>
-  <li
-    :class="
-      todoItem.done
-        ? 'list-group-item list-group-item-success'
-        : 'list-group-item'
-    "
-  >
+  <li>
+    <span @click="useTodoListStore.toggleDone(todoItem.id)">
+      {{ todoItem.todo }}
+      {{ todoItem.done ? '(완료)' : '' }}
+    </span>
     <span
       :class="todoItem.done ? 'todo-done pointer' : 'pointer'"
       @click="toggleDone(todoItem.id)"
@@ -30,10 +28,12 @@
 
 <script setup>
 import { useRouter } from 'vue-router';
-import { inject } from 'vue';
+import { useTodoListStore } from '@/stores/todoList.js';
+
 defineProps({
   todoItem: { Type: Object, required: true },
 });
 const router = useRouter();
-const { deleteTodo, toggleDone } = inject('actions');
+const todoListStore = useTodoListStore();
+const { deleteTodo, toggleDone } = todoListStore;
 </script>

@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia';
 import { reactive, computed } from 'vue';
 import axios from 'axios';
-import { onBeforeRouteUpdate, useRouter } from 'vue-router';
 
 // export const 외부에서가져다사용할변수명 = defineStore('스토어이름', 화살표함수)
 export const useTodoListStore = defineStore('todoList', () => {
@@ -19,7 +18,7 @@ export const useTodoListStore = defineStore('todoList', () => {
     isLoading: false,
   });
 
-  const router = useRouter();
+  // const router = useRouter();
 
   //컴포넌트 시작시 axios로 받아와 todoList를 채워넣는 메서드
   //TodoList 목록을 조회합니다
@@ -46,6 +45,7 @@ export const useTodoListStore = defineStore('todoList', () => {
 
   fetchTodoList(); //시작하자 함수를 호출하고 싶으면 바로 써주세요.!
 
+  // 새로운 TodoITem을 추가합니다.
   const addTodo = async ({ todo, desc }) => {
     states.isLoading = true;
 
@@ -69,14 +69,16 @@ export const useTodoListStore = defineStore('todoList', () => {
     states.isLoading = false;
   };
 
-  const updateTodo = async ({ id, todo, desc, done }) => {
+  // 기존 TodoItem을 변경합니다.
+  const updateTodo = async ({ id, todo, desc, done }, successCallback) => {
     states.isLoading = true;
 
     try {
-      let payload = { id, todo, desc, done };
-      const response = await axios.put(BASEURI + '/' + id, payload);
+      const payload = { id, todo, desc, done };
+      const response = await axios.put(BASEURI + '/${id}', payload);
       if (response.status === 200) {
-        await fetchTodoList();
+        let index = state.todoList.findIndex((todo) => todo.id === id);
+        states.todoList[index] = payload;
       } else {
         alert('Todo 수정 실패');
       }
@@ -86,13 +88,15 @@ export const useTodoListStore = defineStore('todoList', () => {
     states.isLoading = false;
   };
 
+  // 기존 TodoItem을 삭제합니다.
   const deleteTodo = async (id) => {
     states.isLoading = true;
     try {
-      const response = await axios.delete(BASEURI + '/' + id);
+      const response = await axios.delete(BASEURI + '/${id}');
+
       if (response.status === 200) {
-        await fetchTodoList();
-        router.push('/todos');
+        let index = states.todoList.findIndex((todo) => todo.id === id);
+        state.todoList.splice(index, 1);
       } else {
         alert('Todo 삭제 실패');
       }
@@ -102,12 +106,12 @@ export const useTodoListStore = defineStore('todoList', () => {
     states.isLoading = false;
   };
 
+  // 기존 TodoItem의 완료여부 (done) 값을 토글합니다.
   const toggleDone = async (id) => {
     try {
       let todo = states.todoList.find((todo) => todo.id === id);
-      todo.done = !todo.done;
-      const payload = todo;
-      const response = await axios.put(BASEURI + '/' + id, payload);
+      let payload = { ...todo, done: !todo.done };
+      const response = await axios.put(BASEURI + '/$[id]', payload);
       if (response.status == 200) {
         await fetchTodoList();
       } else {

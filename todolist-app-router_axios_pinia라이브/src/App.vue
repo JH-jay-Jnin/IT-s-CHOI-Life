@@ -7,6 +7,7 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import Header from '@/components/Header.vue';
 import Loading from '@/components/Loading.vue';
 import { useTodoListStore } from './stores/todoList';
@@ -18,4 +19,7 @@ const useTodoListStore = useTodoListStore();
 //   computed(() => states.todoList),
 // );
 // provide('actions', { addTodo, deleteTodo, toggleDone, updateTodo });
+const isLoading = computed(() => useTodoListStore.isLoading);
+const fetchTodoList = useTodoListStore.fetchTodoList;
+fetchTodoList();
 </script>
