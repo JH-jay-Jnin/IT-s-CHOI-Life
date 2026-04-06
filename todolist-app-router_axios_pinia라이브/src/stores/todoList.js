@@ -4,7 +4,7 @@ import axios from 'axios';
 import { onBeforeRouteUpdate, useRouter } from 'vue-router';
 
 // export const 외부에서가져다사용할변수명 = defineStore('스토어이름', 화살표함수)
-export const useTodoStore = defineStore('todoList', () => {
+export const useTodoListStore = defineStore('todoList', () => {
   //axios(백엔드 서버와 통신해서 데이터를 CRUD-쿠르드할 수 있는 라이브러리)
   //axios할 주소를 변수에 넣어두자.
   const BASEURI = '/api/todos';
@@ -118,5 +118,5 @@ export const useTodoStore = defineStore('todoList', () => {
     }
   };
 
-  return { state };
+  return { state, addTodo, updateTodo, fetchTodoList, deleteTodo, toggleDone };
 });
