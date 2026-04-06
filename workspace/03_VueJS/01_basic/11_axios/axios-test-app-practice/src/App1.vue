@@ -1,4 +1,4 @@
-// 이 부분이 심화문제 p.4 내용이다.
+<!-- 이 부분이 심화문제 p.4 내용이다.-->
 
 <template>
   <div>
@@ -42,7 +42,7 @@ const requestAPI = () => {
     })
 
     .then((response) => {
-      console.log('## 첫 번째 Todo : ', response);
+      console.log('## 첫 번째 Todo : ', response.data);
 
       // 두 번째 todo id를 다음 then으로 전달
       return todoList[1].id;
@@ -53,12 +53,12 @@ const requestAPI = () => {
       axios.get('/api/tods/' + id).then((resp) => {
         console.log('## 두 번째 Todo : ', resp.data);
       });
-    })
-
-    // then은 여러 번 써도 되지만, catch는 반드시 한 번만 써야한다! (당연히 에러를 잡는거니깐 틀린 부분을 전체적으로 잡아준다)
-    .catch((err) => {
-      console.log(err);
     });
+
+  // // then은 여러 번 써도 되지만, catch는 반드시 한 번만 써야한다! (당연히 에러를 잡는거니깐 틀린 부분을 전체적으로 잡아준다)
+  // .catch((err) => {
+  //   console.log(err);
+  // });
 };
 
 requestAPI(); // 함수 호출

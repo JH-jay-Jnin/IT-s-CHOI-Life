@@ -19,7 +19,7 @@ const requestAPI = () => {
   // let result = axios.get(URL); // 오래걸린 경우 비동기함수(동시에 실행하는 함수)
   // console.log(result);
   // axios.get(ulr).then(get한 이후 결과를 처리할 내용).cathch(에러가 발생했을 때 처리할 내용);
-  // 위 코드에서, then을 써서 비동기를 맞춰줌. // 그리고 뒤에 .catch()를 넣으면 에러도 잡아주다.
+  // 위 코드에서, then을 써서 비동기를 맞춰줌. // 그리고 뒤에 .catch()를 넣으면 에러도 잡아준다.
   axios
     .get(url)
     .then((response) => {
