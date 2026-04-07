@@ -20,12 +20,12 @@ import { defineStore } from 'pinia';
  * 3. actions → 함수 (비즈니스 로직)
  */
 
-// Store 정의 - 'counter'는 스트어의 이름 (고유 식별자)
+// Store 정의 - 'counter'는 스토어의 이름 (고유 식별자)
 export const useCounterStore = defineStore('counter', () => {
   // 상태(state) 정의
   const count = ref(0);
 
-  // 계산된 속성(getters) 정의
+  // 계산된 속성(getters) 정의 ==> 상태값을 안 바꿈
   const doubleCount = computed(() => count.value * 2);
 
   // 함수(actions) 정의
@@ -34,6 +34,11 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++;
   }
 
+  // 0으로 초기화
+  function reset() {
+    count.value = 0;
+  }
+
   // 사용할 상태와 매소드 반환
-  return { count, doubleCount, increment };
+  return { count, doubleCount, increment, reset };
 });

@@ -4,7 +4,7 @@ import Like from '@/components/Like.vue';
 // 01_basic
 import { useLikeStore } from '@/stores/01_basic/like';
 
-const likeStore = useLikeStore();
+const likeStore = useLikeStore(); // 객체로 담아서 속성값으로 사용!
 </script>
 
 <template>

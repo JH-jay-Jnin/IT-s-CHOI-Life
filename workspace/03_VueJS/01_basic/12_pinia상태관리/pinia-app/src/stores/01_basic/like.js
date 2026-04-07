@@ -6,10 +6,10 @@ import { computed } from 'vue';
 // defineStore : 스토어 생성하는 함수
 // 첫 번째 인자가 스토어의 고유 이름이 된다.
 export const useLikeStore = defineStore('like', () => {
-  // state
+  // 1. state
   const like = ref(0); // 좋아요 수를 저장하는 상태 변수
 
-  // action : 값 변경
+  // 2. action : 값 변경 == state에 선언된 값을!
   // like 값을 1씩 증가시키는 메소드
   const increase = () => {
     like.value++;
